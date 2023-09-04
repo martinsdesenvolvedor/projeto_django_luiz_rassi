@@ -1,0 +1,29 @@
+{% extends "usuarios/model-page.html" %}
+
+{% block content %}
+<h1 class="text-center" style="margin-bottom: 5rem;">Lista de Usuários Cadastrados</h1>
+<div class="container">
+    <table class="table table-bordered table-striped text-center">
+       
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+             <th>Idade</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Data do Cadastro</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id_usuario}}</td>
+            <td>{{ usuario.nome}}</td>
+             <td>{{ usuario.idade}}</td>
+            <td>{{ usuario.email}}</td>
+            <td>{{ usuario.telefone}}</td>
+            <td>{{ usuario.get_data_cadastro}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
