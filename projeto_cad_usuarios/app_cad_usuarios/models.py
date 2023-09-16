@@ -1,16 +1,11 @@
 from django.db import models
-from django.core.exceptions import ValidationError
 
-# Create your models here.
-def validacao_max_digits(value):
-    max_digits = 3
-    if value <0 or value >= 10**max_digits:
-        raise ValidationError('Idade Inválida, tente novamente com um número positivo e com no maximo 3 digitos!')
-    
+
+# Create your models here.   
 class Usuario(models.Model):
     id_usuario = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=100)
-    idade = models.PositiveIntegerField(help_text='Informe a idade com no máximo 3 digitos.', validators=[validacao_max_digits])
+    idade = models.CharField(max_length=3)
     email = models.EmailField(max_length=100)
     telefone = models.CharField(max_length=13)
     data_cadastro = models.DateTimeField(auto_now=True)

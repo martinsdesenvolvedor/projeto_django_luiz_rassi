@@ -12,14 +12,17 @@
       }
     </style>
 </head>
-  <body class="bg-info bg-opacity-75 my-body">
+  <body class="bg-info bg-opacity-75">
     <header class="bg-dark ">
-        <nav class="navbar mb-2">
+        <nav class="navbar mb-2 fixed-top " style="height:80px; background: black">
             <div class="container-fluid px-4">
                 <a class="navbar-brand link-light link-opacity-50-hover fs-3" href="{% url 'home' %}">Cadastrar</a>
             </div>
+            <a class="ms-auto position-absolute text-dark text-decoration-none fw-bold" style="right: 1rem; margin-top: 6rem;" href="{% url 'logout' %}">Logout</a>
         </nav>
+        <div class="invisible" style="height: 80px;"></div>
     </header>
+    
     {% block content %}
    
     {% endblock %}
